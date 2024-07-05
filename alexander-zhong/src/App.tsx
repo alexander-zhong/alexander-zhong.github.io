@@ -3,12 +3,12 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 import Nav from "./components/Nav";
 import About from "./components/About";
+import Menu from "./components/Menu";
 
 function App() {
   return (
     <>
-      <Nav />
-      <About />
+      <Menu />
     </>
   );
 }
