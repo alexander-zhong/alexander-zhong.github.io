@@ -1,16 +1,14 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
-import Nav from "./components/Nav";
-import About from "./components/About";
-import Menu from "./components/Menu";
+import React from "react";
+import "@mantine/core/styles.css";
+import { MantineProvider } from "@mantine/core";
+import { theme } from "./theme";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <Menu />
-    </>
+    <MantineProvider theme={theme} defaultColorScheme="dark">
+      App
+    </MantineProvider>
   );
-}
+};
 
 export default App;
