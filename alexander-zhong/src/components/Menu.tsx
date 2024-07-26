@@ -4,7 +4,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
 export default function Menu() {
-  const sections = ["About", "Portfolio", "Resume"];
+  const sections = ["About", "Portfolio", "Contact"];
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -18,19 +18,21 @@ export default function Menu() {
   };
 
   return (
-    <Box sx={{ width: "100%", bgcolor: "#F0F8FF" }}>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        centered
-        textColor="primary"
-        indicatorColor="primary"
-        sx={{ bgcolor: "" }}
-      >
-        {sections.map((item: string) => (
-          <Tab label={item} />
-        ))}
-      </Tabs>
-    </Box>
+    <div className="sticky">
+      <Box sx={{ width: "100%", bgcolor: "#F0F8FF" }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          centered
+          textColor="primary"
+          indicatorColor="primary"
+          sx={{ bgcolor: "" }}
+        >
+          {sections.map((item: string) => (
+            <Tab label={item} />
+          ))}
+        </Tabs>
+      </Box>
+    </div>
   );
 }
