@@ -33,8 +33,8 @@ function About() {
               Alexander Zhong
             </Typography>
             <Typography variant="body1" color="textSecondary">
-              a student studying computer science at the University of British
-              Columbia with Schulich Leader Scholarship
+              studying computer science at the University of British Columbia
+              with Schulich Leader Scholarship
             </Typography>
           </Box>
           <Box
