@@ -6,7 +6,6 @@ const MainPage = () => {
   return (
     <>
       <Header />
-      <ThemeButton />
     </>
   );
 };

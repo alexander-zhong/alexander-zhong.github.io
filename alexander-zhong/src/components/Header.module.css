@@ -5,11 +5,16 @@
   margin-right: auto;
   max-width: 640px;
   margin-top: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .headerDiv {
   display: flex;
   justify-content: center;
+  gap: 1rem;
+  flex: 1;
 }
 
 .headerButton {
@@ -42,12 +47,20 @@
     padding: 8px 15px 8px 15px;
     border-width: 1px;
   }
+  .headerDiv {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex: 1;
+    margin-left: 10%;
+  }
 }
 
 /* Larger button styles for tablets and desktops */
 @media (min-width: 769px) {
   .headerButton {
-    font-size: 12px;
+    font-size: 13px;
+    font-style: bold;
     padding: 8px 20px 8px 20px;
     border-width: 2px;
     margin-left: 2%;
@@ -67,4 +80,10 @@
 
 .headerButton:hover {
   opacity: 1;
+}
+
+.themeButtonWrapper {
+  display: flex;
+  align-items: right;
+  margin-left: auto;
 }

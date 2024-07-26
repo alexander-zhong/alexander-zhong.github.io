@@ -6,7 +6,7 @@ import MainPage from "./MainPage";
 
 const App = () => {
   return (
-    <MantineProvider theme={theme} defaultColorScheme="dark">
+    <MantineProvider theme={theme} defaultColorScheme="light">
       <MainPage />
     </MantineProvider>
   );
