@@ -1,8 +1,14 @@
 import React from "react";
 import ThemeButton from "./components/ThemeButton";
+import Header from "./components/Header";
 
 const MainPage = () => {
-  return <ThemeButton />;
+  return (
+    <>
+      <Header />
+      <ThemeButton />
+    </>
+  );
 };
 
 export default MainPage;
