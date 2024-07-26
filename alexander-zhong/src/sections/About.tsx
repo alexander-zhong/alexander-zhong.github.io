@@ -1,10 +1,12 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, IconButton, Typography } from "@mui/material";
 import { Link } from "react-scroll";
 import img from "../assets/picture.jpg";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 function About() {
   return (
     <>
+      <span id="about"></span>
       <div className="mt-32">
         <Container
           sx={{
@@ -28,14 +30,21 @@ function About() {
             <Typography
               variant="h2"
               component="div"
-              sx={{ fontFamily: "bold" }}
+              sx={{
+                fontFamily: "bold",
+                textShadow: "2px 2px 4px rgba(0, 0, 0, 0.18)",
+              }}
             >
               Alexander Zhong
             </Typography>
             <Typography variant="body1" color="textSecondary">
               studying computer science at the University of British Columbia
-              with Schulich Leader Scholarship
+              and is a Schulich Leader Scholar. Open for opportunities related
+              to SWE and AI
             </Typography>
+            <IconButton href="https://www.linkedin.com/in/alexanderzhong/">
+              <LinkedInIcon fontSize="large" />
+            </IconButton>
           </Box>
           <Box
             component="img"

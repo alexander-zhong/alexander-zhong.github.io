@@ -4,12 +4,11 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
 export default function Menu() {
-  const sections = ["About", "Portfolio", "Contact"];
+  const sections = ["About", "Portfolio"];
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
-
     const sectionId = sections[newValue];
     const sectionElement = document.getElementById(sectionId.toLowerCase());
     if (sectionElement) {
@@ -18,21 +17,27 @@ export default function Menu() {
   };
 
   return (
-    <div className="sticky">
-      <Box sx={{ width: "100%", bgcolor: "#F0F8FF" }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          centered
-          textColor="primary"
-          indicatorColor="primary"
-          sx={{ bgcolor: "" }}
-        >
-          {sections.map((item: string) => (
-            <Tab label={item} />
-          ))}
-        </Tabs>
-      </Box>
-    </div>
+    <Box
+      sx={{
+        width: "100%",
+        position: "sticky",
+        top: 0,
+        zIndex: 1000,
+        bgcolor: "transparent",
+      }}
+    >
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        centered
+        textColor="primary"
+        indicatorColor="primary"
+        sx={{ bgcolor: "" }}
+      >
+        {sections.map((item: string) => (
+          <Tab label={item} />
+        ))}
+      </Tabs>
+    </Box>
   );
 }
