@@ -20,15 +20,6 @@ const Project: React.FC<ProjectProps> = ({
   return (
     <Card sx={{ width: 500, boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)" }}>
       <CardContent>
-        <CardMedia
-          sx={{
-            height: 270,
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
-            borderRadius: 1,
-          }}
-          image={projectImage}
-          title={projectName}
-        />
         <Typography
           gutterBottom
           variant="h5"

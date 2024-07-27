@@ -1,6 +1,4 @@
 import { Container, Typography } from "@mui/material";
-import Grid from "@mui/material/Grid";
-import Project from "../components/Project";
 
 interface ProjectProps {
   projectName: string;
@@ -9,6 +7,16 @@ interface ProjectProps {
 }
 
 const Projects: ProjectProps[] = [
+  {
+    projectName: "Product101",
+    projectImage: "",
+    projectDescription: "Product Management Fellowship",
+  },
+  {
+    projectName: "Headstarter Ai",
+    projectImage: "",
+    projectDescription: "SWE Fellowship",
+  },
   {
     projectName: "SustainaLens",
     projectImage: "",
@@ -41,26 +49,26 @@ const Projects: ProjectProps[] = [
   },
 ];
 
-const Portfolio = () => {
+const ListPortfolio = () => {
   return (
     <>
-      <span id="portfolio"></span>
       <Container sx={{ mt: 20 }}>
         <Typography variant="h2">My projects and experiences</Typography>
-        <Grid container spacing={2} justifyContent="center" sx={{ mt: 8 }}>
+        <ul className="mt-8 md-8 list-disc pl-6 space-y-4">
+          <span id="portfolio"></span>
           {Projects.map((pj) => (
-            <Grid item>
-              <Project
-                projectName={pj.projectName}
-                projectDescription={pj.projectDescription}
-                projectImage={pj.projectImage}
-              />
-            </Grid>
+            <Typography variant="body1">
+              <li key={pj.projectName}>
+                <Typography variant="body1">
+                  {pj.projectName} - {pj.projectDescription}
+                </Typography>
+              </li>
+            </Typography>
           ))}
-        </Grid>
+        </ul>
       </Container>
     </>
   );
 };
 
-export default Portfolio;
+export default ListPortfolio;

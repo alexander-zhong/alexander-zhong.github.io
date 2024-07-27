@@ -1,5 +1,4 @@
 import { Box, Container, IconButton, Typography } from "@mui/material";
-import { Link } from "react-scroll";
 import img from "../assets/picture.jpg";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 

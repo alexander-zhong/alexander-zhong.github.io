@@ -8,6 +8,7 @@ export default function Menu() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    console.log(event);
     setValue(newValue);
     const sectionId = sections[newValue];
     const sectionElement = document.getElementById(sectionId.toLowerCase());
@@ -15,6 +16,34 @@ export default function Menu() {
       sectionElement.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const handleScroll = () => {
+    let activeSection = value;
+
+    sections.forEach((section, index) => {
+      const sectionElement = document.getElementById(section.toLowerCase());
+      if (sectionElement) {
+        const rect = sectionElement.getBoundingClientRect();
+        if (
+          rect.top <= window.innerHeight / 2 &&
+          rect.bottom >= window.innerHeight / 2
+        ) {
+          activeSection = index;
+        }
+      }
+    });
+
+    if (activeSection !== value) {
+      setValue(activeSection);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <Box
@@ -27,7 +56,7 @@ export default function Menu() {
       }}
     >
       <Tabs
-        value={value}
+        value={2}
         onChange={handleChange}
         centered
         textColor="primary"
